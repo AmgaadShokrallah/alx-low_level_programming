@@ -10,7 +10,7 @@
  */
 int main(void)
 {
-	fwrite("and that piece of art is useful\" - 'Dora')Korpar, 2015-10-19\n", sizeof(59), 1, stdout);
+	fwrite("and that piece of art is useful\" - 'Dora')Korpar, 2015-10-19\n", sizeof(59), 1);
 	return (1);
 }
 
