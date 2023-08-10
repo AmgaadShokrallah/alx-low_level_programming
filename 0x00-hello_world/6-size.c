@@ -4,10 +4,10 @@
  *
  * main - Entry point
  *
- * Description: 'the program's description'
+ * Description: 'Program to Find the Size of Variables'
  *
  * Return: Always 0 (Success)
-*/
+ */
 
 int main(void)
 {
