@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 /**
- *
  * main - Entry point
  *
  * Description: 'Program to Find the Size of Variables'
