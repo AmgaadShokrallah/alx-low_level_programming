@@ -33,7 +33,6 @@ int main(void)
 
 			}
 			i2++;
-
 		}
 		i1++;
 	}
