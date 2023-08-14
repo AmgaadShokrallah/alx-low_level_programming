@@ -26,8 +26,8 @@ int main(void)
 
 				if (i1 + i2 != 17)
 				{
-					putchar(",");
-					putchar(" ");
+					putchar(',');
+					putchar(' ');
 				}
 
 
