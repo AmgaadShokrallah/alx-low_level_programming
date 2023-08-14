@@ -36,6 +36,6 @@ int main(void)
 		}
 		i1++;
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
