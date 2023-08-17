@@ -17,11 +17,8 @@ void print_line(int n)
 	}
 	else
 	{
-		while (ch <= n)
-		{
+		for (ch = 1; ch <= n; ch++)
 			_putchar('_');
-			ch++;
-		}
-	_putchar('\n');
+		_putchar('\n');
 	}
 }
