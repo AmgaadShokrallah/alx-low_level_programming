@@ -24,5 +24,6 @@ void more_numbers(void)
 
 	_putchar('\n');
 	num2++;
+	num1 = 0;
 	}
 }
