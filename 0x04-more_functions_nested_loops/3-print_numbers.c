@@ -11,7 +11,7 @@ void print_numbers(void)
 {
 	char ch = '0';
 
-	while (c <= '9')
+	while (ch <= '9')
 	{
 		_putchar(ch);
 		ch++;
