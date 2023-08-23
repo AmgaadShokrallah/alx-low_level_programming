@@ -4,7 +4,7 @@
 /**
  * cap_string - capitalizes all words of a string.
  *
- * @s: parameter
+ * @s: string
  *
  * Return: Always 0.
  */
@@ -31,5 +31,6 @@ char *cap_string(char *s)
 			}
 		}
 	}
+
 	return (s)
 }
