@@ -4,20 +4,20 @@
 /**
  * reverse_array - everses the content of an array of integers.
  *
- * @a: parameter1
- * @n: parameter2
+ * @a: an array of integers
+ * @n: the number of elements to swap
  *
  * Return: Always 0.
  */
 
 void reverse_array(int *a, int n)
 {
-	int i, j, t;
+	int i, j, tmp;
 
 	for (i = 0; j = (n - 1); i < j; i++, j--)
 	{
-		t = a[i];
+		tmp = a[i];
 		a[i] = a[j];
-		a[j] = t;
+		a[j] = tmp;
 	}
 }
