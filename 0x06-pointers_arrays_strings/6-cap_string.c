@@ -6,7 +6,7 @@
  *
  * @s: parameter
  *
- * Return: pointer to the resulting string dest.
+ * Return: Always 0.
  */
 
 char *cap_string(char *s)
