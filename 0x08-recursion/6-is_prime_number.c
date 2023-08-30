@@ -7,7 +7,7 @@
  * @n: parameter1
  * @i: parameter2
  *
- * Return: Always 0.
+ * Return: return 1 if n is prime, 0 if otherwise.
  */
 
 int prime_natural_number(int n, int i);
@@ -22,7 +22,7 @@ int is_prime_number(int n)
  * @n: parameter1
  * @i: parameter2
  *
- * Return: Always 0.
+ * Return: return 1 if n is prime, 0 if otherwise.
  */
 
 int prime_natural_number(int n, int i)
