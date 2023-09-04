@@ -12,18 +12,18 @@
 
 char *create_array(unsigned int size, char c)
 {
-	int *ch;
+	int *s;
 	int i;
 
-	if (size == 0 || ch == NULL)
+	if (size == 0 || s == NULL)
 		return (0);
 
-	ch = (char *)malloc(sizeof(char) * (size));
+	s = (char *)malloc(sizeof(char) * size);
 
-	while (ch < size)
+	while (s < size)
 	{
 		for (i = 0; i < size; i++)
-			ch + i = c;
+			*s + i = c;
 	}
 	return (ch);
 }
