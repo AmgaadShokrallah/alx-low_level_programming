@@ -32,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 	x = 0;
 	y = 0;
 
-	if (s1 != '\0')
+	if (s1)
 	{
 		while (x < i)
 		{
@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 			x++;
 		}
 	}
-	if (s2 != '\0')
+	if (s)
 	{
 		while (x < (i + j))
 		{
