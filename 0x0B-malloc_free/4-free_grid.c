@@ -3,11 +3,9 @@
 #include <stdlib.h>
 
 /**
- * free_grid = frees a 2 dimensional grid previously.
+ * free_grid - frees a two grid.
  * @grid: parameter1
  * @height: parameter2
- *
- * Return: Nothing
  */
 
 void free_grid(int **grid, int height)
