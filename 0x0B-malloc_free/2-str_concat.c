@@ -49,7 +49,7 @@ char *str_concat(char *s1, char *s2)
 			y++;
 		}
 	}
-	a[x] = '\0';
+	s[x] = '\0';
 
 	return (s);
 }
