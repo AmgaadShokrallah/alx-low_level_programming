@@ -2,12 +2,13 @@
 #include <stdlib.h>
 
 /**
- * *_realloc - reallocates a memory block using malloc and free.
+ * *_realloc - reallocates a memory block using
+ * malloc and free.
  * @ptr: parameter1
  * @old_size: parameter2
  * @new_size: parameter3
  *
- * Return: Always 0.
+ * Return: Pointer to new memory block, or NULL if error
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -42,3 +43,4 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		s[i] = c[i];
 	free(ptr);
 	return (s);
+}
