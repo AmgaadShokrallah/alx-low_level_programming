@@ -6,7 +6,7 @@
  * @nmemb: parameter1
  * @size: parameter2
  *
- * Return: Always 0.
+ * Return: pointer to the allocated memory.
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -27,8 +27,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	for (i = 0; i < nmemb; i++)
-	{
 		c[i] = 0;
-	}
+
 	return (c);
 }
