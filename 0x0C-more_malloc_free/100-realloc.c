@@ -8,7 +8,7 @@
  * @old_size: parameter2
  * @new_size: parameter3
  *
- * Return: Pointer to new memory block, or NULL if error
+ * Return: Always 0.
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
