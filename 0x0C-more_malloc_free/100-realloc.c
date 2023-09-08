@@ -8,7 +8,7 @@
  * @old_size: parameter2
  * @new_size: parameter3
  *
- * Return: Always 0.
+ * Return: Pointer
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -38,7 +38,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 
 	c = ptr;
-
 	for (i = 0; i < old_size; i++)
 		s[i] = c[i];
 	free(ptr);
