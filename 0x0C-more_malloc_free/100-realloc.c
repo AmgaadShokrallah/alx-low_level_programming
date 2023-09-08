@@ -34,7 +34,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 
 	s = malloc(new_size);
-	if (s == 0)
+	if (s == NULL)
 		return (NULL);
 
 	c = ptr;
