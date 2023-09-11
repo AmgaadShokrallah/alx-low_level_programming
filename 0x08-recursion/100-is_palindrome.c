@@ -43,7 +43,7 @@ int my_pal(char *s, int i)
 		if (i <= 0)
 			return (1);
 		else
-			return (my_pal(1 - 2 ++s));
+			return (my_pal(++s, l - 2));
 	}
 	else
 		return (0);
