@@ -20,18 +20,18 @@ int _strlen(char *st)
  * *_strcpy - function copies the null-terminated C-string
  * pointed to by source to the memory pointed to by dest.
  * @dest: parameter1
- * @source: parameter2
+ * @src: parameter2
  *
  * Return: return dest
  */
 
-char *_strcpy(char *dest, char *source)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; source[i]; i++)
+	for (i = 0; src[i]; i++)
 	{
-		dest[i] = source[i];
+		dest[i] = src[i];
 	}
 	dest[i] = '\0';
 
