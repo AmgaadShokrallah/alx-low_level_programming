@@ -23,17 +23,15 @@ int _strlen(char *str)
  * @dest: parameter1
  * @src: parameter2
  *
- * Return: return dest
+ * Return: return @dest
  */
 
 char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; src[i]; i++)
-	{
+	for (i = 0; src[i] != '\0'; i++)
 		dest[i] = src[i];
-	}
 	dest[i] = '\0';
 
 	return (dest);
@@ -45,7 +43,7 @@ char *_strcpy(char *dest, char *src)
  * @age: parameter2
  * @owner: parameter3
  *
- * Return: return pointer new dog
+ * Return: pointer new dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
