@@ -25,13 +25,13 @@ int_strlen(char *st)
  * Return: return dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *source)
 {
 	int i;
 
-	for (i = 0; src[i]; i++)
+	for (i = 0; source[i]; i++)
 	{
-		dest[i] = src[i];
+		dest[i] = source[i];
 	}
 	dest[i] = '\0';
 
