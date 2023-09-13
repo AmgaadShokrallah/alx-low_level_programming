@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int by, i;
-	char *array;
+	char *array = (char *)main;
 
 	if (argc != 2)
 	{
@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-
-	array = (char *)main;
 
 	for (i = 0; i < by; i++)
 	{
