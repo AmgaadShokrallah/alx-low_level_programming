@@ -9,6 +9,7 @@
  *
  * Return: Always 0.
  */
+
 int main(int argc, char *argv[])
 {
 	int by, i;
@@ -21,7 +22,6 @@ int main(int argc, char *argv[])
 	}
 
 	by = atoi(argv[1]);
-
 	if (by < 0)
 	{
 		printf("Error\n");
