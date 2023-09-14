@@ -43,7 +43,7 @@ void _printstr(va_list ap)
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
-		s = "(nil)";
+		str = "(nil)";
 	printf("%s", str);
 }
 
@@ -70,9 +70,9 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (sort[j].type)
+		while (sort[j].data)
 		{
-			if (format[i] == sort[j].type[0])
+			if (format[i] == sort[j].data[0])
 			{
 			 sort[j].f(sep, ap);
 			 sep = ", ";

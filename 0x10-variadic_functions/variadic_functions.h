@@ -8,9 +8,9 @@
  * @f: parameter2
  */
 
-typedef struct token
+typedef struct list
 {
-	char *list;
+	char *data;
 	void (*f)(char *, va_list);
 } list;
 
