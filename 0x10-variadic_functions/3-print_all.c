@@ -59,10 +59,11 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	style sort[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string}
+		{ "c", _printchar },
+		{ "i", _printint },
+		{ "f", _printfloat },
+		{ "s", _printstr },
+		{ NULL, NULL }
 	};
 
 	va_start(ap, format);
