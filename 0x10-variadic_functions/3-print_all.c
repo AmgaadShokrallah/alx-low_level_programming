@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 	char *sep = "";
 	va_list ap;
 
-	list sort[] = {
+	style sort[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},

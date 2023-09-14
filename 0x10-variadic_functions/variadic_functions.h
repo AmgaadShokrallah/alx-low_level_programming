@@ -2,17 +2,11 @@
 #define VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
 
-/**
- * struct token - struct
- * @token: parameter1
- * @f: parameter2
- */
-
-typedef struct list
+typedef struct style
 {
 	char *data;
 	void (*f)(char *, va_list);
-} list;
+} style;
 
 
 int sum_them_all(const unsigned int n, ...);
