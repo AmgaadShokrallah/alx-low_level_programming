@@ -5,9 +5,8 @@
 typedef struct style
 {
 	char *data;
-	void (*f)(char *, va_list);
+	void (*f)();
 } style;
-
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
