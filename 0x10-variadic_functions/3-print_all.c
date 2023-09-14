@@ -63,10 +63,11 @@ void print_all(const char * const format, ...)
 		{ "i", _printint },
 		{ "f", _printfloat },
 		{ "s", _printstr },
+		{ NULL, NULL}
 	};
 
 	va_start(ap, format);
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (sort[j].data)
@@ -81,6 +82,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-
 	va_end(ap);
 }
