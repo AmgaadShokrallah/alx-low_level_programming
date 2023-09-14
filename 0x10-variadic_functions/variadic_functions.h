@@ -10,18 +10,18 @@
 
 typedef struct token
 {
-	char *token;
+	char *list;
 	void (*f)(char *, va_list);
-} token_t;
+} list;
 
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-void print_char(va_list ap);
-void print_int(va_list ap);
-void print_float(va_list ap);
-void print_string(va_list ap);
+void _printchar(va_list ap);
+void _printint(va_list ap);
+void _printfloat(va_list ap);
+void _printstr(va_list ap);
 
 #endif

@@ -3,41 +3,41 @@
 #include <stdio.h>
 
 /**
- *_print_char - to print char
+ * _printchar - to print char
  * @ap: parameter
  */
 
-void print_char(va_list ap)
+void _printchar(va_list ap)
 {
 	printf("%c", va_arg(ap, int));
 }
 
 /**
- * print_int - to print intger
+ * _printint - to print intger
  * @ap: parameter
  */
 
-void print_int(va_list ap)
+void _printint(va_list ap)
 {
 	printf("%d", va_arg(ap, int));
 }
 
 /**
- * print_float - to print float
+ * _printfloat - to print float
  * @ap: parameter
  */
 
-void print_float(va_list ap)
+void _printfloat(va_list ap)
 {
 	printf("%f", va_arg(ap, double));
 }
 
 /**
- * print_string - to print string
+ * _printstr - to print string
  * @ap: parameter
  */
 
-void print_string(va_list ap)
+void _printstr(va_list ap)
 {
 	char *str;
 
@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 	char *sep = "";
 	va_list ap;
 
-	token_t tokens[] = {
+	list sort[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -70,11 +70,11 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (tokens[j].token)
+		while (sort[j].type)
 		{
-			if (format[i] == tokens[j].token[0])
+			if (format[i] == sort[j].type[0])
 			{
-			 tokens[j].f(sep, ap);
+			 sort[j].f(sep, ap);
 			 sep = ", ";
 			}
 			i++;
