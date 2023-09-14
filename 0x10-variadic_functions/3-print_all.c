@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 	char *sep = "";
 	va_list ap;
 
-	list format[] = {
+	token_t tokens[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -70,11 +70,11 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (format[j].format)
+		while (tokens[j].token)
 		{
-			if (format[i] == format[j].format[0])
+			if (format[i] == tokens[j].token[0])
 			{
-			 format[j].f(sep, ap);
+			 tokens[j].f(sep, ap);
 			 sep = ", ";
 			}
 			i++;
