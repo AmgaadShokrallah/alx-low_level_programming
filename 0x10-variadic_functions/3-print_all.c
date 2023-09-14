@@ -54,7 +54,7 @@ void _printstr(va_list ap)
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j;
+	unsigned int i = 0, j;
 	char *sep = "";
 	va_list ap;
 
