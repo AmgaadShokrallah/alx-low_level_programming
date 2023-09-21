@@ -1,9 +1,11 @@
-	global		main
-	extern		printf
+section		.text
+	extern	printf
+	global	main
+
 main:
 	mov		edi, mes
-	mov		eax, eax
-	call		printf
 	mov		eax, 0
-	ret
-mes: db 'Hello, Holberton\n',0
+	call	printf
+
+section		.data
+	mes: db 'Hello, Holberton', 0xa, 0
