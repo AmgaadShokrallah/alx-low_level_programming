@@ -3,7 +3,7 @@
 void _constructor(void) __attribute__ ((constructor));
 
 /**
- * constructor - print a sentence before mai()
+ * _constructor - print a sentence before mai()
  *
  * Return: void
  */
