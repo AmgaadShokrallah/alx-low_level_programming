@@ -124,14 +124,36 @@ void print_osabi(Elf64_Ehdr h)
 	case ELFOSABI_TRU64:
 		printf("UNIX - TRU64");
 		break;
-	case ELFOSABI_ARM:
-		printf("ARM");
-		break;
-	case ELFOSABI_STANDALONE:
-		printf("Standalone App");
-		break;
 	default:
-		printf("<unknown: %x>\n", h.e_ident[EI_OSABI]);
+		print_osabi_more(h);
+		break;
+	}
+}
+
+/**
+ * print_osabi_more - print osabi more to ELf
+ * @h: parameter
+ */
+
+void print_osabi_more(Elf64_Ehdr h)
+{
+	switch (h.e_ident[EI_OSABI])
+	{
+		case ELFOSABI_MODESTO:
+			printf("Nove11 - Modesto");
+			break;
+		case ELFOSABI_OPENBSD:
+			printf("UNIX - OpenBSD");
+			break;
+		case ELFOSABI_STANDALONE:
+			printf("Standalone APP");
+			break;
+		case ELFOSABI_ARM:
+			printf("ARM");
+			break;
+		default:
+			printf("<unknown: %x>", h.e_ident[EI_OSABI]);
+			break;
 	}
 }
 
