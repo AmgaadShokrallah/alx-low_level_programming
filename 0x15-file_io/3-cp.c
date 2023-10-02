@@ -13,7 +13,7 @@
 * Return: 1 on success 0 on failure
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int fd_from = 0, fd_to = 0;
 	ssize_t f;
@@ -34,10 +34,8 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	if (f == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
-
 	if (close(fd_from) == -1)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_from), exit(100);
-
 	if (close(fd_to) == -1)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_to), exit(100);
 
