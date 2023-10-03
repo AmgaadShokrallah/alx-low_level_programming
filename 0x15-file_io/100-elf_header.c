@@ -173,31 +173,34 @@ void print_abi(Elf64_Ehdr h)
  */
 void print_type(Elf64_Ehdr h)
 {
-	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
-		h.e_type >>= 8;
+	char *po = (char *)&h.e_type;
+	int l = 0;
 
 	printf("  Type:                              ");
-
-	switch (h.e_type)
+	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
+		l = 1;
+	switch (po[l])
 	{
-	case ET_NONE:
-		printf("NONE (None)\n");
+		case ET_NONE:
+			printf("NONE (None)");
+			break;
+		case ET_REL:
+			printf("REL (Relocatable file)");
+			break;
+		case ET_EXEC:
+			printf("EXEC (Executable file)");
+			break;
+		case ET_DYN:
+			printf("DYN (Shared object file)");
+			break;
+		case ET_CORE:
+			printf("CORE (Core file)");
+			break;
+		default:
+			printf("<unknown>: %x", po[l]);
 		break;
-	case ET_REL:
-		printf("REL (Relocatable file)\n");
-		break;
-	case ET_EXEC:
-		printf("EXEC (Executable file)\n");
-		break;
-	case ET_DYN:
-		printf("DYN (Shared object file)\n");
-		break;
-	case ET_CORE:
-		printf("CORE (Core file)\n");
-		break;
-	default:
-		printf("<unknown: %x>\n", h.e_type);
 	}
+	printf("\n");
 }
 
 /**
