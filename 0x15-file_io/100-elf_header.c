@@ -207,22 +207,34 @@ void print_type(Elf64_Ehdr h)
  * print_entry - Prints the entry point of an ELF header.
  * @h: parameter
  */
+
 void print_entry(Elf64_Ehdr h)
 {
-	printf("  Entry point address:               ");
+	int i = 0, leng = 0;
+	unsigned char *o = (unsigned char *)&h.e_entry;
 
+	printf("  Entry point address:               0x");
 	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
 	{
-		h.e_entry = ((h.e_entry << 8) & 0xFF00FF00) |
-			  ((h.e_entry >> 8) & 0xFF00FF);
-		h.e_entry = (h.e_entry << 16) | (h.e_entry >> 16);
+		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
+		while (!o[i])
+			i--;
+		printf("%x", o[i--]);
+		for (; i >= 0; i--)
+			printf("%02x", o[i]);
+		printf("\n");
 	}
-
-	if (h.e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)h.e_entry);
-
 	else
-		printf("%#lx\n", h.e_entry);
+	{
+		i = 0;
+		leng = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
+		while (!o[i])
+			i++;
+		printf("%x", o[i++]);
+		for (; i <= leng; i++)
+			printf("%02x", o[i]);
+		printf("\n");
+	}
 }
 
 /**
