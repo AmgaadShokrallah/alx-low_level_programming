@@ -13,14 +13,7 @@ void print_magic(Elf64_Ehdr h)
 
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
-	{
-		printf("%02x", h.e_ident[i]);
-
-		if (i == EI_NIDENT - 1)
-			printf("\n");
-		else
-			printf(" ");
-	}
+		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT - 1 ? "\n" : " ");
 }
 
 /**
@@ -33,15 +26,15 @@ void print_class(Elf64_Ehdr h)
 
 	switch (h.e_ident[EI_CLASS])
 	{
-	case ELFCLASSNONE:
-		printf("none");
-	break;
-	case ELFCLASS32:
-		printf("ELF32");
-	break;
-	case ELFCLASS64:
-		printf("ELF64");
-	break;
+		case ELFCLASS64:
+			printf("ELF64");
+		break;
+		case ELFCLASS32:
+			printf("ELF32");
+		break;
+		case ELFCLASSNONE:
+			printf("none");
+		break;
 	}
 	printf("\n");
 }
@@ -80,7 +73,7 @@ void print_version(Elf64_Ehdr h)
 	switch (h.e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
-			printf(" (current)\n");
+			printf(" (current)");
 		break;
 		case EV_NONE:
 			printf("%s", "");
@@ -97,37 +90,40 @@ void print_version(Elf64_Ehdr h)
 void print_osabi(Elf64_Ehdr h)
 {
 	printf("  OS/ABI:                            ");
-
 	switch (h.e_ident[EI_OSABI])
 	{
-	case ELFOSABI_NONE:
-		printf("UNIX - System V");
-		break;
-	case ELFOSABI_HPUX:
-		printf("UNIX - HP-UX");
-		break;
-	case ELFOSABI_NETBSD:
-		printf("UNIX - NetBSD");
-		break;
-	case ELFOSABI_LINUX:
-		printf("UNIX - Linux");
-		break;
-	case ELFOSABI_SOLARIS:
-		printf("UNIX - Solaris");
-		break;
-	case ELFOSABI_IRIX:
-		printf("UNIX - IRIX");
-		break;
-	case ELFOSABI_FREEBSD:
-		printf("UNIX - FreeBSD");
-		break;
-	case ELFOSABI_TRU64:
-		printf("UNIX - TRU64");
-		break;
-	default:
-		print_osabi_more(h);
-		break;
+		case ELFOSABI_NONE:
+			printf("UNIX - System V");
+			break;
+		case ELFOSABI_HPUX:
+			printf("UNIX - HP-UX");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD");
+			break;
+		case ELFOSABI_LINUX:
+			printf("UNIX - Linux");
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris");
+			break;
+		case ELFOSABI_AIX:
+			printf("UNIX - AIX");
+			break;
+		case ELFOSABI_IRIX:
+			printf("UNIX - IRIX");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - TRU64");
+			break;
+		default:
+			print_osabi_more(h);
+			break;
 	}
+	printf("\n");
 }
 
 /**
